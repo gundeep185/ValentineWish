@@ -1,11 +1,22 @@
 // Animation Timeline
 const animationTimeline = () => {
   // Get the audio element by its ID
-  const audio = document.getElementById("backgroundAudio");
+  // const audio = document.getElementById("backgroundAudio");
 
-  // Play the audio when the animation starts
-  audio.play();
+  // // Play the audio when the animation starts
+  // audio.play();
 
+    window.onload = function() {
+    var context = new AudioContext();
+    // Setup audio nodes...
+  }
+  
+  document.querySelector('button').addEventListener('click', function() {
+    context.resume().then(() => {
+      console.log('Playback resumed successfully');
+    });
+  });
+  
   // Split chars that need to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
